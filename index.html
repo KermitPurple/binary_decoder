@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New Project</title>
+        <title>Decoder</title>
         <meta name="viewport" content="width=device-width">
-        <!-- <link href="index.css" type="text/css" rel="stylesheet"> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" defer></script> -->
-        <!-- <script src="index.js" defer></script> -->
+        <link href="index.css" type="text/css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" defer></script> 
+        <script src="index.js" defer></script>
     </head>
     <body>
+        <h1 id="title">Decoder</h1>
+        <select id="decoding-type" onchange="convert()">
+            <option value="ab">ASCII to Binary</option>
+            <option value="ba">Binary to ASCII</option>
+            <option value="ib">Integer to Binary</option>
+            <option value="bi">Binary to Integer</option>
+        </select>
+        <div class="container">
+            <div class="box">
+                <h2 class="sub-title">Input</h2>
+                <textarea id="text-input" oninput="convert()"></textarea>
+            </div>
+            <div class="box">
+                <h2 class="sub-title">Output</h2>
+                <textarea id="text-output" readonly></textarea>
+            </div>
+        </div>
     </body>
 </html>
