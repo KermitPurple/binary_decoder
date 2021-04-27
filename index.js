@@ -34,7 +34,10 @@ function ascii_to_binary(str){
 }
 
 function binary_to_ascii(str){
-    return str.split(/\s/).map(val=>String.fromCharCode(binary_to_int(val))).join('');
+    return str.split(/\s/)
+        .filter(v=>v)
+        .map(val=>String.fromCharCode(binary_to_int(val)))
+        .join('');
 }
 
 function convert(){
