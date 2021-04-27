@@ -3,8 +3,7 @@
     --bg-accent: #222;
     --fg: #1a1;
     --fg-accent: #3a3;
-    --font: consolas;
-    --select-focus: red;
+    --font: 'IBM Plex Mono', monospace;
 }
 
 body, html{
@@ -39,6 +38,7 @@ body{
 
 .sub-title{
     display: block;
+    font-weight: 200;
 }
 
 .box{
