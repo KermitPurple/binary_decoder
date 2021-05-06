@@ -88,8 +88,13 @@ function convert(){
     }
 }
 
-function copy(){
+function copy_output(){
     text_output.select()
     text_output.setSelectionRange(0, 99999);
     document.execCommand('copy');
+}
+
+function copy_to_input(){
+    text_input.value = text_output.value;
+    convert();
 }
