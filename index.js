@@ -44,6 +44,15 @@ function binary_to_ascii(str){
         .join('');
 }
 
+function swap_case(str){
+    return str.split('')
+        .map(char=>{
+            let lower = char.toLowerCase();
+            return char === lower ? char.toUpperCase() : lower;
+        })
+        .join('');
+}
+
 function convert(){
     switch(decoding_type.value){
         case 'ab':
@@ -67,5 +76,20 @@ function convert(){
         case 'r':
             text_output.value = reverse_str(text_input.value);
             break;
+        case 'sc':
+            text_output.value = swap_case(text_input.value);
+            break;
+        case 'uc':
+            text_output.value = text_input.value.toUpperCase();
+            break;
+        case 'lc':
+            text_output.value = text_input.value.toLowerCase();
+            break;
     }
+}
+
+function copy(){
+    text_output.select()
+    text_output.setSelectionRange(0, 99999);
+    document.execCommand('copy');
 }
