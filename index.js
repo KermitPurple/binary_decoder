@@ -14,9 +14,13 @@ function int_to_binary(num){
     return result.padStart(8, '0');
 }
 
+function reverse_str(str){
+    return str.split('').reverse().join('')
+}
+
 function binary_to_int(str){
     let result = 0;
-    str = str.split('').reverse().join('');
+    str = reverse_str(str);
     for(let i = 0; i < str.length; i++){
         if(str[i] == '1')
             result += 2 ** i;
@@ -59,6 +63,9 @@ function convert(){
                 .filter(v=>v)
                 .map(v=>binary_to_int(v))
                 .join('\n');
+            break;
+        case 'r':
+            text_output.value = reverse_str(text_input.value);
             break;
     }
 }
